@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
-  <title>LIFF - LINE  Front-end Framework</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+    <title>LIFF - LINE  Front-end Framework</title>
 </head>
 <body>
-  <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
-  <script>
-      async function main() {
-          await liff.init({ liffId:"1656332092-PRKOrb1e" })
-          await liff.shareTargetPicker([
-              {
-                  type: "flex",
-                  altText: "การันตี24 พ.ร.บ ต่อภาษี ประกันภัย",
-                  contents: {
+    <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
+    <script>
+        async function main() {
+            await liff.init({ liffId:"1656332092-PRKOrb1e" })
+            await liff.shareTargetPicker([
+                {
+                    type: "flex",
+                    altText: "Flex Message from Share Targt Picker",
+                    contents: {
   "type": "bubble",
   "body": {
     "type": "box",
@@ -23,7 +23,12 @@
       {
         "type": "image",
         "url": "https://garantee24.com/wp-content/uploads/2021/08/add-friends.png",
-        "size": "full"
+        "size": "full",
+        "action": {
+          "type": "uri",
+          "label": "action",
+          "uri": "https://page.line.me/garantee24"
+        }
       }
     ],
     "paddingAll": "0px"
@@ -35,17 +40,32 @@
       {
         "type": "text",
         "text": "ส่วนลด 100 บาท ซื้อพ.ร.บ/ต่อภาษี",
-        "size": "xs"
+        "size": "xs",
+        "action": {
+          "type": "uri",
+          "label": "action",
+          "uri": "https://page.line.me/garantee24"
+        }
       },
       {
         "type": "text",
         "text": "ส่วนลด 300 บาท ซื้อประกันประเภท 3",
-        "size": "xs"
+        "size": "xs",
+        "action": {
+          "type": "uri",
+          "label": "action",
+          "uri": "https://page.line.me/garantee24"
+        }
       },
       {
         "type": "text",
         "text": "ส่วนลด 500 บาท ซื้อประกันประเภท 1,2+,3+",
-        "size": "xs"
+        "size": "xs",
+        "action": {
+          "type": "uri",
+          "label": "action",
+          "uri": "https://page.line.me/garantee24"
+        }
       },
       {
         "type": "button",
@@ -54,6 +74,7 @@
           "label": "รับคูปองฟรี!! คลิก",
           "uri": "https://page.line.me/garantee24"
         },
+        "margin": "sm",
         "height": "sm"
       },
       {
@@ -63,21 +84,20 @@
           "label": "แชร์ให้เพื่อน",
           "uri": "https://liff.line.me/1656332092-PRKOrb1e"
         },
-        "height": "sm",
-        "style": "primary"
+        "style": "primary",
+        "margin": "sm",
+        "height": "sm"
       }
     ]
   }
 }
-                  
-              }
-          ])
-          liff.closeWindow()
-      }
-      main()
-  </script>
-  
-
+                }         
+            ])
+            liff.closeWindow()
+        }
+        main()
+    </script>
+    
 </body>
 
 </html>
